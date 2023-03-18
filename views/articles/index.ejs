@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>.pm1{ color: rgb(134, 132, 132);
+    text-align:center;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+    .formargin{margin-top: 30px;
+    margin-left: 10%;
+    margin-right:10%;}
+    
+    /* .pm9{
+      display: blocks;
+    } */
+    .movingtext{
+      margin-bottom:5%;
+    }
+    .main{
+   
+   margin-top: 70px;
+   justify-content:center;
+   text-align:center;
+ }
+ .pm7{
+   
+   text-transform: uppercase;
+   color: #fd1919; 
+   font-size: 5rem;
+ }
+ .pm8{
+   text-align:center;
+ }
+ /* .pm9{
+
+       display: block;
+       margin: 0 auto;
+ } */
+ .roller{
+   height: 4.125rem;
+   line-height: 4rem;
+   position: relative;
+   overflow: hidden; 
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+   color: #1D3557;
+ }
+ 
+ 
+ #spare-time{
+   font-size: 1rem;
+   font-style: italic;
+   letter-spacing: 1rem;
+   margin-top: 0;
+   color: #A8DADC;
+   
+ }
+ 
+ .roller #rolltext {
+   position: absolute;
+   top: 0;
+   animation: slide 5s infinite;  
+ }
+ 
+ @keyframes slide {
+   0%{
+     top:0;
+   }
+   25%{
+     top: -4rem;    
+   }
+   50%{
+     top: -8rem;
+   }
+   72.5%{
+     top: -12.25rem;
+   }
+ }
+ 
+ @media screen and (max-width: 600px){
+   h1{
+   text-align:center;
+   text-transform: uppercase;
+   color: #F1FAEE; 
+   font-size: 2.125rem;
+ }
+   
+   .roller{
+   height: 2.6rem; 
+   line-height: 2.125rem;  
+   }
+   
+   #spare-time {
+     font-size: 1rem;
+     letter-spacing: 0.1rem;
+   }
+   
+   .roller #rolltext {  
+   animation: slide-mob 5s infinite;  
+ }
+   
+   @keyframes slide-mob {
+   0%{
+     top:0;
+   }
+   25%{
+     top: -2.125rem;    
+   }
+   50%{
+     top: -4.25rem;
+   }
+   72.5%{
+     top: -6.375rem;
+   }
+ }
+ }
+
+ .allarticlesbtn{
+  margin-top: 2%;
+ margin-left: 47%;
+ }
+ .readmore{
+  margin:2%;
+  background-color: #8deeff;
+  color: black;
+ }
+ .insidebox{
+  margin-left:2%;
+ }
+ </style> 
+  </head>
+  <body>
+
+<div class="movingtext">
+
+    <div class="main">
+      <h1 class="pm7">Create. Communicate. Inspire. <div class="roller">
+        <span id="rolltext">Unlock<br/>
+        Your<br/>
+        Potential<br/>
+        <span id="spare-time"></span><br/>
+        
+        </div> </div><h2 class="pm8">"Want to inspire others and make a difference? Start writing on our blog today!"</h2>
+        </h1>
+        <a href="/articles/new" class="btn btn-primary allarticlesbtn">New Article</a>
+
+</div>
+
+
+   
+    <% articles.forEach(article=>{
+        %><div class="formargin"> <div class="card ">
+          <div class="card-subtitle   pm1">
+            <%=article.title %></div>
+
+          <div class="insidebox">
+            <div class="card-subtitle ">
+            <%=article.description %></div>
+
+            <div class="card-subtitle ">
+              <%=article.markdown %></div>
+  
+            <div class="card-subtitle time ">
+              <%= article.createdat %></div> </div>
+            <div>  <a href="/articles/<%= article.id %>"  class="btn btn-primary readmore">Read More</a> </div>
+        </div></div>
+        
+    <%}) %>
+
+
+    <img src="image/image1.png" width="50px">
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
